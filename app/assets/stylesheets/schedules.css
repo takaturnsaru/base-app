@@ -1,36 +1,63 @@
 .all{
   display: flex;
   flex-direction: column;
-  background-color: skyblue;
 }
 
-.menu{
-  background-color: blue;
+.header{
+  background-color: dodgerblue;
   height: 100px;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 3px solid silver;
+  border-bottom: 3px solid black;
+}
+.company-name{
+  font-size: 30px;
+  margin: 30px;
 }
 
 .user-name{
   font-size: 30px;
-  margin-left: 20px;
+  margin: 30px;
 }
 
-.menu-list{
-  font-size: 25px;
+.menu-lists{
   display: flex;
-  list-style: none;
+}
+
+
+a{
+  font-size: 20px;
+  margin: 30px;
+  border: 2px solid beige;
+} 
+
+.before-login{
+  font-size: 20px;
+}
+
+.before-menu{
+  text-decoration: none;
+  border: 1px solid black;
+  margin: 0 30px;
 }
 
 li{
-  border: 1px solid yellow;
-  margin: 0 40px;
-  padding: 20px;
+  border: 2px solid beige;
+  margin: 0 20px;
 }
 
 
 
+.main{
+  background-color: dodgerblue;
+  height: calc(100vh - 100px);
+  width: 100%;
+}
+
+.calendar{
+  width: 700px;
+  height: 300px;
+}
 

@@ -1,13 +1,21 @@
-<div class="menu">
-  <div class="user-name">田中太郎</div>
-    <ul class="menu-list">
-      <li>トップページ</li>
-      <li>タイムカード</li>
-      <li>顧客</li>
-      <li>製品</li>
-      <li>メール</li>
-      <li>slack</li>
-      <li>ログアウト</li>
-    </ul>
+<div class="header">
+    <% if user_signed_in? %>
+    <div class="user-name"><%= current_user.name%></div>
+    <div class="menu-lists">
+      <%= link_to "トップページ","#",class:"memu-list"%>
+      <%= link_to "タイムカード","#",class:"memu-list"%>
+      <%= link_to "顧客","#",class:"memu-list"%>
+      <%= link_to "製品","#",class:"memu-list"%>
+      <%= link_to "メール","#",class:"memu-list"%>
+      <%= link_to "slack","#",class:"memu-list"%>
+      <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"memu-list"%>
+    </div>
+    <% else %>
+    <div class="company-name">〇〇株式会社</div>
+    <div class="before-login">
+      <%= link_to "ログイン", new_user_session_path, class:"before-menu"%>
+      <%= link_to "新規登録", new_user_registration_path,class:"before-menu"%>
+    </div>
+    <% end %>
   </div>
 </div>
