@@ -1,2 +1,14 @@
 <div class="main">
+  <% if user_signed_in? %>
+    <div class="calendar">
+      <%= month_calendar events: @meetings do |date,meetings| %>
+        <%= date%>
+          <% meetings.each do |meeting| %>
+            <div>
+              <%= meeting.name %>
+            </div>
+          <% end %> 
+        <% end%>
+    </div>
+  <% end %>
 </div> 

@@ -17,10 +17,20 @@
   margin: 30px;
 }
 
+.user-name{
+  font-size: 30px;
+  margin: 30px;
+}
 
-.menu-list{
+.menu-lists{
   display: flex;
+}
+
+
+a{
   font-size: 20px;
+  margin: 30px;
+  border: 2px solid beige;
 } 
 
 .before-login{
@@ -38,9 +48,16 @@ li{
   margin: 0 20px;
 }
 
+
+
 .main{
   background-color: dodgerblue;
   height: calc(100vh - 100px);
   width: 100%;
+}
+
+.calendar{
+  width: 700px;
+  height: 300px;
 }
 

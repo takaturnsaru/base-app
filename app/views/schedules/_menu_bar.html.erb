@@ -1,15 +1,17 @@
 <div class="header">
-  <div class="company-name">〇〇株式会社</div>
     <% if user_signed_in? %>
-      <ul class="menu-list">
-        <li><a href="#">toppage</a></li>
-        <li><a href="#">time card</li>
-        <li><a href="#">product</li>
-        <li><a href="#">client</li>
-        <li><a href="#">mail</li>
-        <li><a href="#">slack</li>
-      </ul>
+    <div class="user-name"><%= current_user.name%></div>
+    <div class="menu-lists">
+      <%= link_to "トップページ","#",class:"memu-list"%>
+      <%= link_to "タイムカード","#",class:"memu-list"%>
+      <%= link_to "顧客","#",class:"memu-list"%>
+      <%= link_to "製品","#",class:"memu-list"%>
+      <%= link_to "メール","#",class:"memu-list"%>
+      <%= link_to "slack","#",class:"memu-list"%>
+      <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"memu-list"%>
+    </div>
     <% else %>
+    <div class="company-name">〇〇株式会社</div>
     <div class="before-login">
       <%= link_to "ログイン", new_user_session_path, class:"before-menu"%>
       <%= link_to "新規登録", new_user_registration_path,class:"before-menu"%>
