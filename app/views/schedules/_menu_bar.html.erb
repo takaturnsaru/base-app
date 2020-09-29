@@ -2,10 +2,10 @@
     <% if user_signed_in? %>
     <div class="user-name"><%= current_user.name%></div>
     <div class="menu-lists">
-      <%= link_to "トップページ","#",class:"memu-list"%>
+      <%= link_to "トップページ",root_path,class:"memu-list"%>
       <%= link_to "タイムカード","#",class:"memu-list"%>
       <%= link_to "顧客", clients_path,class:"memu-list"%>
-      <%= link_to "製品","#",class:"memu-list"%>
+      <%= link_to "製品",products_path,class:"memu-list"%>
       <%= link_to "メール","#",class:"memu-list"%>
       <%= link_to "slack","#",class:"memu-list"%>
       <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"memu-list"%>

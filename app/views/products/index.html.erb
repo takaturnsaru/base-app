@@ -1,0 +1,14 @@
+<div class="header">
+  <%= render "schedules/menu_bar"%>
+</div>
+<div class="product-all">
+  <%= link_to "新製品登録",new_product_path,class:"new-tab"%>
+  <div class="product-lists">
+  <% @products.each do |product|%>
+    <div class="product-list">
+    <%= product.name%>
+    <%= product.grade.name%>
+    <%= product.price%>
+  <% end %>
+  </div>
+</div>
