@@ -1,0 +1,52 @@
+.product-all{
+  height: calc(100vh - 100px);
+  background-color: beige;
+}
+
+.product-content{
+  color: brown;
+  margin:0 0 0 10px;
+  font-size: 30px;
+}
+
+
+
+.new-tab{
+  background-color: olivedrab;
+  color: white;
+  font-size: 20px;
+  margin-left: 700px;
+  text-decoration: none;
+  padding: 10px;
+}
+
+
+
+.product-list{
+  font-family: osaka;
+  font-size: 25px;
+  margin: 40px;
+  display: flex;
+}
+
+.product-data{
+  margin: 0 40px;
+}
+
+
+
+
+.input-default{
+  font-size: 20px;
+  margin: 30px;
+}
+
+.select-box{
+  font-size:30px;
+}
+
+.save-blue-btn{
+  background-color: skyblue;
+  padding: 0 20px;
+  margin: 0 30px;
+}

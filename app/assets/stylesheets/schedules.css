@@ -1,16 +1,17 @@
 .all{
+  font-family: osaka;
   display: flex;
   flex-direction: column;
 }
 
 .header{
-  background-color: dodgerblue;
+  background-color: beige;
   height: 100px;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 3px solid black;
+  border-bottom: 3px solid brown;
 }
 .company-name{
   font-size: 30px;
@@ -27,10 +28,13 @@
 }
 
 
-a{
+.menu-list{
+  color: cornflowerblue;
   font-size: 20px;
   margin: 30px;
-  border: 2px solid beige;
+  padding: 0 0 0 5px;
+  border-left: 3px solid brown;
+  text-decoration: none;
 } 
 
 .before-login{
@@ -38,8 +42,10 @@ a{
 }
 
 .before-menu{
+  color: cornflowerblue;
   text-decoration: none;
-  border: 1px solid black;
+  border-left: 3px solid brown;
+  padding: 0 0 0 5px;
   margin: 0 30px;
 }
 
@@ -51,13 +57,14 @@ li{
 
 
 .main{
-  background-color: dodgerblue;
+  background-color:beige;
   height: calc(100vh - 100px);
   width: 100%;
 }
 
 .calendar{
-  width: 700px;
-  height: 300px;
+  background-color: coral;
+  width: 800px;
+  height: 463px;
 }
 

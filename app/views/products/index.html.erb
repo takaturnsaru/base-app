@@ -2,13 +2,15 @@
   <%= render "schedules/menu_bar"%>
 </div>
 <div class="product-all">
-  <%= link_to "新製品登録",new_product_path,class:"new-tab"%>
+  <h2 class="product-content">製品一覧</h2>
   <div class="product-lists">
+  <%= link_to "新製品登録",new_product_path,class:"new-tab"%>
   <% @products.each do |product|%>
     <div class="product-list">
-    <%= product.name%>
-    <%= product.grade.name%>
-    <%= product.price%>
+      <span class="product-data"><%= product.name%></span>
+      <span class="product-data"><%= product.grade.name%></span>
+      <span class="product-data">¥<%= product.price%></span>
+    </div>
   <% end %>
   </div>
 </div>

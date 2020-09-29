@@ -1,0 +1,40 @@
+.log-in{
+  width: 100%;
+  height: 100vh;
+  background-color: beige;
+  font-family: osaka;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-tag{
+  font-size: 30px;
+  color: brown;
+  border-bottom: 3px solid cadetblue;
+  margin-bottom: 50px;
+}
+
+
+label{
+  color: cadetblue;
+  font-size: 30px;
+}
+
+input[type="email"]{
+  width: 500px;
+  height: 40px;
+  margin-bottom: 30px;
+}
+
+input[type="password"]{
+  width: 500px;
+  height: 40px;
+  margin-bottom: 30px;
+}
+
+.in-btn{
+  padding: 0 30px;
+  margin: 40px 0 40px 200px;
+}
