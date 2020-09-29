@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   resources :schedules, only: [:index, :destroy] do
     resources :meetings 
   end
+  resources :clients, only: [:index, :new, :create]
 end

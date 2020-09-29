@@ -1,0 +1,15 @@
+<div class="header">
+  <%= render "schedules/menu_bar"%>
+</div>
+<div class="client" >
+  <%= link_to "新規顧客登録", new_client_path, class:"new-client-tab" %>
+  <div class="client-list">
+    <% @clients.each do |client|%>
+    <div class="client-content">
+      <%= link_to "#",class:"client-name" do %>
+      <%= client.name %>
+      <%  end  %>
+    </div>
+   <% end %> 
+  </div>
+</div>
