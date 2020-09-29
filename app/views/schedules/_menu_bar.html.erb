@@ -2,13 +2,13 @@
     <% if user_signed_in? %>
     <div class="user-name"><%= current_user.name%></div>
     <div class="menu-lists">
-      <%= link_to "トップページ",root_path,class:"memu-list"%>
-      <%= link_to "タイムカード","#",class:"memu-list"%>
-      <%= link_to "顧客", clients_path,class:"memu-list"%>
-      <%= link_to "製品",products_path,class:"memu-list"%>
-      <%= link_to "メール","#",class:"memu-list"%>
-      <%= link_to "slack","#",class:"memu-list"%>
-      <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"memu-list"%>
+      <%= link_to "トップページ",root_path,class:"menu-list"%>
+      <%= link_to "タイムカード","#",class:"menu-list"%>
+      <%= link_to "顧客", clients_path,class:"menu-list"%>
+      <%= link_to "製品",products_path,class:"menu-list"%>
+      <%= link_to "メール","#",class:"menu-list"%>
+      <%= link_to "slack","#",class:"menu-list"%>
+      <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"menu-list"%>
     </div>
     <% else %>
     <div class="company-name">〇〇株式会社</div>
