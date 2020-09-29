@@ -6,6 +6,6 @@ Rails.application.routes.draw do
     resources :meetings 
   end
   resources :clients, only: [:index, :new, :create] 
-  resources :products, only: [:index]
+  resources :products, only: [:index, :new, :create]
   
 end
