@@ -7,7 +7,7 @@
   <div class="client-list">
     <% @clients.each do |client|%>
     <div class="client-content">
-      <%= link_to "#",class:"client-name" do %>
+      <%= link_to client_path(client.id),class:"client-name" do %>
       <%= client.name %>
       <%  end  %>
     </div>
