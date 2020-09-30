@@ -1,0 +1,4 @@
+.client{
+  background-color: beige;
+  height: calc(100vh - 100px);
+}

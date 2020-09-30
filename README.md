@@ -28,18 +28,6 @@
 -belongs_to :user
 
 
-## Objectivesテーブル
-
-|column            |type       |options                      |
-|------------------|-----------|-----------------------------|
-|objective_price   |integer    |nill:false                   |
-|user              |references |nill:false,foregin_key:true  |
-|purchase          |references |nill:false,foregin_key:true  |
-
-## Assodiation
--has_many :purchase
--belongs_to :user
-
 ## Schedulesテーブル
 
 |column           |type        |options                      |
