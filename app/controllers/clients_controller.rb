@@ -19,6 +19,7 @@ class ClientsController < ApplicationController
 
   def show
     @client = Client.find(params[:id])
+    @purchaser = @client.purchaser_ids
   end
 
   def edit
@@ -28,7 +29,6 @@ class ClientsController < ApplicationController
   def update
     @client = Client.find(params[:id])
     @client.update(client_params)
-    binding.pry
     if @client.valid?
       redirect_to client_path
     else
@@ -40,7 +40,7 @@ class ClientsController < ApplicationController
   private
 
     def client_params
-      params.require(:client).permit(:name, :postal_code, :prefectures_id, :city, :address, :building_name, :phone_number)
+      params.require(:client).permit(:name, :postal_code, :prefectures_id, :city, :address, :building_name, :phone_number).merge(purchaser_id:params[:purchaser_id])
     end
   
 end
