@@ -2,7 +2,8 @@
   <%= render "schedules/menu_bar"%>
 </div>
 <div class="purchaser-date">
-<%= form_with url:client_purchasers_path(@client.id), class:"purchaser-new",local: true do |f|%>
+<%= form_with url:client_purchasers_path(@client), class:"purchaser-new",local: true do |f|%>
+        <label class="client-name"><%=@client.name%></label>
   <div class="purchaser-group">
     <label class="purchaser-text">購入日</label>
       <%= raw sprintf(
@@ -19,7 +20,6 @@
                     )
       )
   </div>
-  <label class="client-name"><%=@client.name%></label>
   <div class="purchaser-group">
     <label class="puchaser-text">製品・仕様<label>
       <%= f.collection_select(:product_specification_id, ProductSpecification.all, :id, :name, {} ,{class:"select-box", id:"product_specification"})%>

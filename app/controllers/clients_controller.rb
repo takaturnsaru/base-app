@@ -19,7 +19,7 @@ class ClientsController < ApplicationController
 
   def show
     @client = Client.find(params[:id])
-    @purchaser = @client.purchaser_ids
+    @purchaser = @client.purchasers.includes(:client)
   end
 
   def edit
@@ -40,7 +40,7 @@ class ClientsController < ApplicationController
   private
 
     def client_params
-      params.require(:client).permit(:name, :postal_code, :prefectures_id, :city, :address, :building_name, :phone_number).merge(purchaser_id:params[:purchaser_id])
+      params.require(:client).permit(:name, :postal_code, :prefectures_id, :city, :address, :building_name, :phone_number)
     end
   
 end

@@ -54,8 +54,10 @@ ActiveRecord::Schema.define(version: 2020_10_01_075337) do
     t.integer "unit_price"
     t.integer "quanity"
     t.integer "amount"
+    t.bigint "client_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["client_id"], name: "index_purchasers_on_client_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

@@ -26,9 +26,13 @@
       <%= link_to "購入等履歴登録",new_client_purchaser_path(@client), class:"purchaser-new-data"%>
     </div>
     <div class="purchaser-data-list">
-    <% @purchaser.each do |purchaser| %>
-    <div><%= purchaser.buyday%>
-    <%end%>
+    <% @purchaser.each do |purchaser|%>
+    <%=purchaser.buyday%>
+    <%=purchaser.product_specification[:name]%>
+    <%=purchaser.unit_price%>
+    <%=purchaser.quanity%>
+    <%=purchaser.amount%>
+    <% end %>
     </div>
 
 </div>

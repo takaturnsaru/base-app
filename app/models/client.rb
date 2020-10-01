@@ -2,8 +2,7 @@ class Client < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :prefectures
 
-  has_many :culients_purchasers
-  has_many :purchasers, through: :culients_purchasers
+  has_many :purchasers
 
 
 

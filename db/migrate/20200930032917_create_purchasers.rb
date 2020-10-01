@@ -6,6 +6,7 @@ class CreatePurchasers < ActiveRecord::Migration[6.0]
       t.integer :unit_price,                  default:""
       t.integer :quanity,                     default:""
       t.integer :amount,                      default:""
+      t.references :client,                   null:false,foregin_key:true
 
       t.timestamps
     end
