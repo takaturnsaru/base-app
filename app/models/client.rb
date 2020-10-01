@@ -2,6 +2,8 @@ class Client < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :prefectures
 
+  has_many :purchasers
+
 
 
   with_options presence: true do

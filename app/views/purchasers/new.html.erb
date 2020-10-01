@@ -1,0 +1,44 @@
+<div class="header">
+  <%= render "schedules/menu_bar"%>
+</div>
+<div class="purchaser-date">
+<%= form_with url:client_purchasers_path(@client), class:"purchaser-new",local: true do |f|%>
+        <label class="client-name"><%=@client.name%></label>
+  <div class="purchaser-group">
+    <label class="purchaser-text">購入日</label>
+      <%= raw sprintf(
+                    f.date_select(
+                      :buyday,
+                      class:"select-buyday",
+                      id:"buyday-date",
+                      use_month_numbers: true,
+                      prompt:"--",
+                      start_year: 2000,
+                      end_year: (Time.now.year),
+                      date_separator: "%s"),
+                      "<p> 年 </p>", "<p> 月 </p>") + "<p> 日 </p>" %>
+                    )
+      )
+  </div>
+  <div class="purchaser-group">
+    <label class="puchaser-text">製品・仕様<label>
+      <%= f.collection_select(:product_specification_id, ProductSpecification.all, :id, :name, {} ,{class:"select-box", id:"product_specification"})%>
+  </div>
+  <div class="purchaser-group">
+    <label class="purchaser-text">単価</label>
+      <%= f.text_field :unit_price, class:"purchaser-input"%>
+  </div>
+  <div class="purchaser-group">
+    <label class="purchaser-text">数量</label>
+      <%= f.text_field :quanity, class:"purchaser-input"%>
+  </div>
+  <div class="purchaser-group">
+    <label class="purchaser-text">合計価格</label>
+      <%= f.text_field :amount, class:"purchaser-input"%>
+  </div>
+  <div class="save-btn">
+  <%= f.submit"登録",class:"save-red-btn" %>
+</div>
+
+  <% end %>
+</div>

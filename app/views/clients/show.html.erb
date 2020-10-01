@@ -1,0 +1,38 @@
+<div class="header">
+  <%= render "schedules/menu_bar"%>
+</div>
+<div class="client-data">
+  <h2 class="client-profile">顧客情報</h2>
+  <%= link_to "顧客情報変更",edit_client_path, class: "client-edet-tag"%>
+    <div class="client-date-list">
+      <label class="client-item">名前</label>
+      <div class="client-value"><%= @client.name%></div>
+      <label class="client-item">郵便番号</label>
+      <div class="client-value"><%= @client.postal_code%></div>
+      <label class="client-item">都道府県</label>
+      <div class="client-value"><%= @client.prefectures[:name]%></div>
+      <label class="client-item">市町村</label>
+      <div class="client-value"><%= @client.city%></div>
+      <label class="client-item">番地</label>
+      <div class="client-value"><%= @client.address%></div>
+      <label class="client-item">ビル名</label>
+      <div class="client-value"><%= @client.building_name%></div>
+      <label class="client-item">電話番号</label>
+      <div class="client-value"><%= @client.phone_number%></div>
+    </div>
+
+    <div class="purhaser-data">
+      <h2 class="heading">購入履歴</h2>
+      <%= link_to "購入等履歴登録",new_client_purchaser_path(@client), class:"purchaser-new-data"%>
+    </div>
+    <div class="purchaser-data-list">
+    <% @purchaser.each do |purchaser|%>
+    <%=purchaser.buyday%>
+    <%=purchaser.product_specification[:name]%>
+    <%=purchaser.unit_price%>
+    <%=purchaser.quanity%>
+    <%=purchaser.amount%>
+    <% end %>
+    </div>
+
+</div>
