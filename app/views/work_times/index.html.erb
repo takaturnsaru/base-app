@@ -15,3 +15,8 @@
           =hour+":"+minute+":"+second;
       }
     </script>
+<div class="stamping">
+<%= form_with url:"/work_times", method: :post, id: "form" do |f|%>
+<%= f.submit "出勤", id:"attendance-submit"%>
+<%= f.submit "退勤", id:"leave-submit"%>
+<% end %>
