@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     resources :purchasers, only: [:new, :create]
   end
   
+  resources :work_times, only: [:index, :new, :create]
 
   resources :products, only: [:index, :new, :create,:edit,:update]
   
