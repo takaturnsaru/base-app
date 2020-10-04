@@ -23,6 +23,5 @@ function click() {
     }
     e.preventDefault();
   });
-  setInterval(click,1000);
 }
 window.addEventListener("load",click);

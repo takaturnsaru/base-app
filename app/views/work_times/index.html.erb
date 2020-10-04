@@ -14,7 +14,7 @@
 <% @work_times.each do |work_time|%>
   <div class="work-time" data-id = <%= work_time.id%>>
     <div class="work-time-date">
-      <%= work_time.time %>
+      <%= work_time.time.strftime("%Y-%m-%d %H:%M:%S") %>
     </div>
   </div>
 <% end %>
