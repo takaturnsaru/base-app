@@ -1,11 +1,12 @@
 class WorkTimesController < ApplicationController
 
   def index
-    @work_time = WorkTime.all
+    @work_times = WorkTime.all
   end
   
   def create
-    WorkTime.create(created_at:params[:created_at])
+    @user = User.find(current_user[:id])
+    work_time = WorkTime.create(user_id: @user.id,time:Time.current)
     render json:{work_time: work_time}
   end   
 end

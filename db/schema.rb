@@ -74,6 +74,7 @@ ActiveRecord::Schema.define(version: 2020_10_02_090715) do
   end
 
   create_table "work_times", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.datetime "time", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

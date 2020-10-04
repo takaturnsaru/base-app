@@ -1,22 +1,23 @@
 <div class="header">
   <%= render "schedules/menu_bar"%>
 </div>
- <title>デジタル時計 03</title>
-    <script>
-      function updateClock() {
-        var now = new Date();
-        var hour = now.getHours();
-        var minute = now.getMinutes();
-        var second = now.getSeconds();
-        if ( hour < 10 ) hour = "0" + hour;
-        if ( minute < 10 ) minute = "0" + minute;
-        if ( second < 10 ) second = "0" + second;
-        document.getElementById('myClock').innerHTML
-          =hour+":"+minute+":"+second;
-      }
-    </script>
+<div id="clock-frame">
+  <span id="clock_date"></span>
+  <span id="clock_time"></span>
+</div>
 <div class="stamping">
 <%= form_with url:"/work_times", method: :post, id: "form" do |f|%>
-<%= f.submit "出勤", id:"attendance-submit"%>
-<%= f.submit "退勤", id:"leave-submit"%>
+<%= f.submit "出勤", id:"submit"%>
 <% end %>
+<div id="list"></div>
+
+<% @work_times.each do |work_time|%>
+  <div class="work-time" data-id = <%= work_time.id%>>
+    <div class="work-time-date">
+      <%= work_time.time %>
+    </div>
+  </div>
+<% end %>
+
+
+
