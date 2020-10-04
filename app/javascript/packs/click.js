@@ -20,7 +20,7 @@ function click() {
         </div>
       </div>`;
     list.insertAdjacentHTML("afterend", HTML);
-    }
+    };
     e.preventDefault();
   });
 }
