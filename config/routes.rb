@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'memo/index'
   get 'products/index'
   devise_for :users
   root to: 'schedules#index'
