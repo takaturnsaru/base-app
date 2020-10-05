@@ -8,4 +8,10 @@ class SchedulesController < ApplicationController
     schedule = Schedule.create(text:params[:text])
     render json:{schedule: schedule}
   end
+
+  def destroy
+    schedule = Schedule.destroy(params[:id])
+    render json:{schedule: schedule}
+  end
+
 end
