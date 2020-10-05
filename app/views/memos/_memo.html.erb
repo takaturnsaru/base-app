@@ -1,0 +1,18 @@
+<div class="memo-all">
+  <div class="memo-text">
+  <%= form_with url:"/memos",method: :post,class:"memo-form",local:true do |f|%>
+  <%= f.text_area :memo%>
+  <%= f.submit "登録"%>
+  <% end %>
+  <div id="memo-list"><div>
+  </div>
+  <div class="memo-lists">
+  <%= @memos.each do |memo|%>
+    <div class="memo-data" data-id = <%= memo.id%>>
+      <div class="memo-data-list">
+        <%= memo.memo%>
+      </div>
+    </div>
+   <%end%>
+  </div>
+</div>

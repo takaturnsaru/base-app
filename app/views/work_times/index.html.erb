@@ -2,23 +2,24 @@
   <%= render "schedules/menu_bar"%>
 </div>
 <div id="clock-frame">
-  <span id="clock_date"></span>
-  <span id="clock_time"></span>
+  <span id="clock-date"></span>
+  <span id="clock-time"></span>
 </div>
 <div class="stamping">
-<%= form_with url:"/work_times", method: :post, id: "form" do |f|%>
-<%= f.submit "出勤/退勤", id:"submit"%>
+  <%= form_with url:"/work_times", method: :post, id: "form" do |f|%>
+  <%= f.submit "出勤/退勤", id:"submit"%>
+  <% end %>
 
-<% end %>
-<div id="list"></div>
+  <div id="list"></div>
+</div>
 
-<% @work_times.each do |work_time|%>
-  <div class="work-time" data-id = <%= work_time.id%>>
-    <div class="work-time-date">
-      <%= work_time.time.strftime("%Y-%m-%d %H:%M:%S") %>
+  <% @work_times.each do |work_time|%>
+    <div class="work-time" data-id = <%= work_time.id%>>
+      <div class="work-time-date">
+        <%= work_time.time.strftime("%Y-%m-%d %H:%M:%S") %>
+      </div>
     </div>
-  </div>
-<% end %>
+  <% end %>
 
 
 

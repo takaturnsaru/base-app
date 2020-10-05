@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
+  get 'memo/index'
   get 'products/index'
   devise_for :users
   root to: 'schedules#index'
-  resources :schedules, only: [:index, :destroy] do
+  resources :schedules, only: [:index,:create,:destroy] do
     resources :meetings 
   end
   resources :clients, only: [:index, :new, :create, :show, :edit, :update] do
@@ -12,5 +13,6 @@ Rails.application.routes.draw do
   resources :work_times, only: [:index, :new, :create]
 
   resources :products, only: [:index, :new, :create,:edit,:update]
+
   
 end
