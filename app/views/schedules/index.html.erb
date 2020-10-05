@@ -3,6 +3,35 @@
     <%= render "menu_bar"%>
   </div>
   <div class="main">
-    <%= render "main_screen"%>
-  </div>
+  <% if user_signed_in? %>
+    <div class="calendar">
+      <%= month_calendar events: @meetings do |date,meetings| %>
+        <%= date%>
+          <% meetings.each do |meeting| %>
+            <div>
+              <%= meeting.name %>
+            </div>
+          <% end %> 
+        <% end%>
+    </div>
+    <div class="memo-all">
+      <div class="memo-content">
+      <%= form_with url:"/schedules",method: :post,id:"text-form" do |f|%>
+        <%= f.text_area :text, id:"memo-text"%>
+        <%= f.submit "登録",id:"memo-submit"%>
+      <% end %>
+      <div id="text-list"></div>
+      </div>
+      <div class="text-lists">
+      <% @schedules.each do |schedule|%>
+        <div class="text-data" data-id = <%= schedule.id%>>
+          <div class="text-data-list">
+            <%= schedule.text%>
+          </div>
+        </div>
+      <%end%>
+      </div>
+    </div>
+  <% end %>
+</div> 
 </div>
