@@ -65,4 +65,3 @@ gem "active_hash"
 
 gem "pry-rails"
 
-gem "activerecord-import"
