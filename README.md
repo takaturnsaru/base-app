@@ -1,4 +1,58 @@
+## Persona
+
+|sex       |age     |profession   |
+|----------|--------|-------------| 
+|man       |20~50   |selesPosition|
+
+## 要件定義
+
+### ユーザー管理機能
+-ユーザーを新しく登録できる
+-登録完了している場合、ログインすることができる
+-登録したユーザーのみ、ほかの機能が使えるページに遷移できる
+-ログアウトできる
+
+
+### 出勤退勤の打刻機能
+-出勤、退勤の打刻ができる
+-時間は日本時間
+
+### スケジュール管理機能
+-当月のカレンダーが表示されている
+-カレンダーに予定を書き込める
+-メモや、やることを登録できるスペースがある
+
+### 顧客管理機能
+-顧客一覧が見れる
+-顧客の名前をクリックすると顧客情報と購入履歴が見れる
+-購入履歴登録ボタンがある
+
+### 購入履歴機能
+-購入履歴が顧客詳細ページで見れる
+-購入履歴を登録することができる
+-購入履歴を編集するボタンがある
+
+### 製品管理機能
+-製品の一覧が見れる
+
+### gmail遷移機能
+-gmailページに遷移できるボタンがある
+
+### slack遷移機能
+-slackページに遷移できるボタンがある
+
+
+
+
+
+
+
+
+
+
+
 # README
+
 
 ## Usersテーブル
 
@@ -6,87 +60,91 @@
 |----------|-----------|-----------------|
 |name      |string     |nill:false       |
 |email     |string     |nill:false       |
-
+|password  |string     |nill:false       |
 
 ## Association
 -has_many :work_times
--has_many :schedule
--has_many :objective
--has_many :clients
--hsz_many :actions
+-has_many :schedules
+
+
 
 ## Work_timesテーブル
 
 |column            |type       |options                      |
 |------------------|-----------|-----------------------------|
-|attendance_time   |datetime   |nill:false                   |
-|leave_time        |datetime   |nill:false                   |
-|over_time         |datetime   |nill:false                   |
+|time              |datetime   |nill:false                   |
 |user              |references |nill:false, foregin_key:true |
 
 ## Association
 -belongs_to :user
 
 
+
 ## Schedulesテーブル
 
 |column           |type        |options                      |
 |-----------------|------------|-----------------------------|
-|date             |datetime    |default:""                   |
-|plan             |text        |default:""                   |
+|text             |text        |null:false                   |
 |user             |references  |nill:false,foregin_key:true  |
 
-## Assocoatopn
+## Associatopn
 -belongs_to :user
+-has_many :meetings
 
-## Clientsテーブル
+
+
+## meetingsテーブル
+
 |column           |type        |options                      |
 |-----------------|------------|-----------------------------|
-|client_name      |string      |nill:false                   |
-|birthday         |date        |nill:false                   |
+|name             |string      |null:false                   |
+|start_time       |datetime    |default:""                   |
+|schedule         |references  |nill:false,foregin_key:true  |
+
+## Association
+-belongs_to :schedule
+
+
+
+## Clientsテーブル
+
+|column           |type        |options                      |
+|-----------------|------------|-----------------------------|
+|name             |string      |nill:false                   |
 |postal_code      |string      |nill:false                   |
-|prefectures      |ineger      |nill:false                   |
+|prefectures_id   |ineger      |nill:false                   |
+|city             |string      |nill:false                   |
 |address          |string      |nill:false                   |
 |bilding_name     |string      |default:""                   |
-|gender           |integer     |nill:false                   |
-|profession       |integer     |nill:false                   |
-|user             |references  |nill:false,foregin_key:true  |
+|phone_number     |string      |nill:false                   |
 
 ## Association
--has_many :products
--has_many :purchase
--belongs_to :user
+-has_many :purchasers
+
+
 
 ## productsテーブル
+
 |column           |type        |options                       |
 |-----------------|------------|------------------------------|
-|product_name     |string      |nill:false                    |
-|grade            |string      |nill:false                    |
-|product_price    |integer     |nill:false                    |
-|grade_price      |integer     |nill:false                    |
-|client           |references  |nill:false,foregin_key:true   |
+|name             |string      |nill:false                    |
+|grade_id         |string      |nill:false                    |
+|price            |integer     |nill:false                    |
+
+
+
+## purchasersテーブル
+
+|column                   |type        |options                       |
+|-------------------------|------------|------------------------------|
+|buyday                   |date        |nill:false                    |
+|product_specification_id |integer     |default:""                    |
+|unit_price               |integer     |default:""                    |
+|quanity                  |integer     |default:""                    |
+|amount                   |integer     |default:""                    |
+|client                   |references  |nill:false,foregin_key:true   |
 
 ## Association
--has_many :purchase
 -belongs_to :client
 
-## purchaseテーブル
-
-|column           |type        |options                       |
-|-----------------|------------|------------------------------|
-|client           |references  |nill:false,foregin_key:true   |
-|product          |references  |nill:false,foregin_key:true   |
-
-## Association
--belongs_to :client
--belongs_to :product
-
-
-|column           |type        |options                       |
-|-----------------|------------|------------------------------|
-|action           |text        |default:""                    |
-|user             |references  |nill:false,foregin_key:true   |
-
-## Association
--belongs_to :user
 
