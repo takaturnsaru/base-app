@@ -19,7 +19,7 @@ class ClientsController < ApplicationController
 
   def show
     @client = Client.find(params[:id])
-    @purchaser = @client.purchasers.includes(:client)
+    @purchasers = @client.purchasers.includes(:client)
   end
 
   def edit

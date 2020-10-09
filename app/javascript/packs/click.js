@@ -24,4 +24,4 @@ function click() {
     e.preventDefault();
   });
 }
-window.addEventListener("load",click);
+window.addEventListener("load", click);

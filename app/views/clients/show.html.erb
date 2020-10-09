@@ -26,12 +26,14 @@
       <%= link_to "購入等履歴登録",new_client_purchaser_path(@client), class:"purchaser-new-data"%>
     </div>
     <div class="purchaser-data-list">
-    <% @purchaser.each do |purchaser|%>
+    <%@purchasers.each do |purchaser|%>
     <%=purchaser.buyday%>
     <%=purchaser.product_specification[:name]%>
     <%=purchaser.unit_price%>
     <%=purchaser.quanity%>
     <%=purchaser.amount%>
+    <%= link_to "編集", edit_client_purchaser_path(@client.id,purchaser.id), class: "purchaser-edit"%>
+    <%= link_to "削除", client_purchaser_path(@client.id,purchaser.id),method: :delete,class: "purchaser-destroy"%>
     <% end %>
     </div>
 
