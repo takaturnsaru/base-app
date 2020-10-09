@@ -20,8 +20,6 @@
   padding: 10px;
 }
 
-
-
 .product-list{
   font-family: osaka;
   font-size: 25px;
@@ -33,9 +31,6 @@
   margin: 0 40px;
 }
 
-
-
-
 .input-default{
   font-size: 20px;
   margin: 30px;
@@ -45,8 +40,15 @@
   font-size:30px;
 }
 
+.product-group{
+  display: flex;
+  flex-direction: column;
+}
+
 .save-blue-btn{
-  background-color: skyblue;
-  padding: 0 20px;
-  margin: 0 30px;
+  margin: 30px;
+  background-color: olivedrab;
+  color: white;
+  font-size: 20px;
+  padding: 0 10px;
 }
