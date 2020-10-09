@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     resources :meetings 
   end
   resources :clients, only: [:index, :new, :create, :show, :edit, :update] do
-    resources :purchasers, only: [:new, :create]
+    resources :purchasers, only: [:new,:create,:edit,:update,:destroy]
   end
   
   resources :work_times, only: [:index, :new, :create]

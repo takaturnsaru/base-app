@@ -2,8 +2,8 @@
   <%= render "schedules/menu_bar"%>
 </div>
 <div class="purchaser-date">
-<%= form_with model:@purchaser,url:client_purchasers_path(@client), class:"purchaser-new",local: true do |f|%>
-        <label class="client-name"><%=@client.name%></label>
+<%= form_with model:@purchaser,url:client_purchaser_path(@client.id,@purchaser.id),method: :patch, class:"purchaser-new",local: true do |f|%>
+        <label class="client-name"><%=@purchaser.client.name%></label>
   <div class="purchaser-group">
     <label class="purchaser-text">購入日</label>
       <%= raw sprintf(
