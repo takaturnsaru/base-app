@@ -1,6 +1,8 @@
 <div class="header">
   <%= render "schedules/menu_bar"%>
 </div>
+
+<div class="main">
 <div class="purchaser-date">
 <%= form_with model:@purchaser,url:client_purchaser_path(@client.id,@purchaser.id),method: :patch, class:"purchaser-new",local: true do |f|%>
         <label class="client-name"><%=@purchaser.client.name%></label>
@@ -41,4 +43,5 @@
 </div>
 
   <% end %>
+</div>
 </div>

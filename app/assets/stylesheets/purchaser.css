@@ -1,0 +1,23 @@
+.purchaser-date{
+  display: flex;
+  flex-direction: column;
+}
+
+.client-name-data{
+  font-size: 35px;
+  color: black;
+}
+
+.purchaser-group{
+  font-size: 25px;
+  margin: 30px;
+}
+
+.date_buyday{
+  display: flex;
+}
+
+.purchaser-data-list{
+  display: flex;
+  flex-direction: column;
+}

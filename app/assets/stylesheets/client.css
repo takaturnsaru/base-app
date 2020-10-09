@@ -1,4 +1,55 @@
-.client{
-  background-color: beige;
-  height: calc(100vh - 100px);
+
+.client-group{
+  font-size: 35px;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-default{
+  width: 200px;
+}
+
+.select-box{
+  width: 200px;
+  margin: 30px;
+}
+
+.client-name{
+  font-size: 25px;
+  text-decoration: none;
+  color: brown;
+  padding: 20px;
+}
+
+.content-tab{
+  background-color: olivedrab;
+  color: white;
+  font-size: 20px;
+  padding: 10px;
+  text-decoration: none;
+  margin-left: 600px;
+}
+
+.client-item{
+  font-size: 25px;
+  color: cadetblue;
+  margin: 30px;
+}
+
+.client-value{
+  font-size: 30px;
+  color: black;
+  margin: 0 40px;
+}
+
+.heading{
+  font-size: 35px;
+}
+
+.save-red-btn{
+  margin: 30px;
+  background-color: olivedrab;
+  color: white;
+  font-size: 20px;
+  padding: 0 10px;
 }
