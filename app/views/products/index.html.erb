@@ -7,9 +7,9 @@
   <%= link_to "新製品登録",new_product_path,class:"new-tab"%>
   <% @products.each do |product|%>
     <div class="product-list">
-      <span class="product-data"><%= product.name%></span>
-      <span class="product-data"><%= product.grade.name%></span>
-      <span class="product-data">¥<%= product.price%></span>
+      <span class="product-data">製品 - <%= product.name%></span>
+      <span class="product-data">仕様 - <%= product.grade.name%></span>
+      <span class="product-data">¥ -<%= product.price%></span>
     </div>
   <% end %>
   </div>
