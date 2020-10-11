@@ -1,3 +1,41 @@
+
+# アプリ名
+
+
+## 概要
+
+## 本番環境
+
+## 制作背景
+
+## 使用技術
+
+### バックエンド
+
+Ruby,Ruby on Rails
+
+### フロントエンド
+
+HTML,JavaScript,Ajax
+
+### データベース
+
+MySQL,Sequel Pro
+
+### ソース管理
+
+GitHub,GitHubDesktop
+
+### テスト
+
+Rspec
+
+### エディタ
+
+VSCode
+
+
+
 ## ペルソナ
 
 - 性別 男性
@@ -45,7 +83,7 @@
 
 ---
 
-# README
+# DB設計
 
 
 ## Usersテーブル

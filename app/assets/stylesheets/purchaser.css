@@ -1,8 +1,4 @@
-.purchaser-date{
-  display: flex;
-  flex-direction: column;
-}
-
+date_select
 .client-name-data{
   font-size: 35px;
   color: black;
