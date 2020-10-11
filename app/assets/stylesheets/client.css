@@ -1,4 +1,90 @@
-.client{
-  background-color: beige;
-  height: calc(100vh - 100px);
+.client-content{
+  font-size: 35px;
+  margin: 10px 0 0 10px;
+}
+
+.client-text{
+  margin: 10px 0 0 10px;
+}
+
+.client-group{
+  font-size: 35px;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-default{
+  width: 200px;
+}
+
+.select-box{
+  width: 200px;
+  margin: 30px;
+}
+
+.client-name{
+  font-size: 30px;
+  text-decoration: none;
+  color: black;
+  padding: 20px 0 0 40px;
+}
+
+.content-tab{
+  background-color: olivedrab;
+  color: white;
+  font-size: 20px;
+  padding: 10px;
+  text-decoration: none;
+  margin-left: 600px;
+}
+
+.client-item{
+  font-size: 25px;
+  color: cadetblue;
+  margin: 30px;
+}
+
+.client-value{
+  font-size: 30px;
+  color: black;
+  margin: 0 40px;
+}
+
+.heading{
+  font-size: 35px;
+  margin: 30px 0 0 10px;
+  padding-top: 10px;
+  border-top: 3px solid olivedrab;
+}
+
+.save-red-btn{
+  margin: 30px;
+  background-color: olivedrab;
+  color: white;
+  font-size: 20px;
+  padding: 0 10px;
+}
+
+.purchaser-data-lists{
+  display: flex;
+
+}
+
+.purchaser-data-list{
+  margin: 30px 0 ;
+  font-size: 25px;
+}
+
+
+.purchaser-edit{
+  color: dodgerblue;
+  margin: 30px 20px ;
+  font-size: 25px;
+
+}
+
+.purchaser-destroy{
+  color: dodgerblue;
+  margin: 30px 20px ;
+  font-size: 25px;
 }

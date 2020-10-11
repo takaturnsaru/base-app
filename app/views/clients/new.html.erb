@@ -1,36 +1,42 @@
 <div class="header">
   <%= render "schedules/menu_bar"%>
 </div>
+
+
+<div class="main">
 <%= form_with model: @client,url: clients_path,class: "client-data-save", local: true do |f|%>
-<div class="client-group">
-  <label class="client-text">名前</label>
-    <%= f.text_field :name, class: "input-default"%>
-</div>
-<div class="client-group">
-  <label class="client-text">郵便番号</label>
-    <%= f.text_field :postal_code, class: "input-default"%>
-</div>
-<div class="client-group">
-  <label class="client-text">都道府県</label>
-    <%= f.collection_select(:prefectures_id ,Prefectures.all, :id, :name, {}, {class:"select-box", id:"prefecture"})%>
-</div>
-<div class="client-group">
-  <label class="client-text">市区町村</label>
-    <%= f.text_field :city, class: "input-default"%>
-</div>
-<div class="client-group">
-  <label class="client-text">番地</label>
-    <%= f.text_field :address, class: "input-default"%>
-</div>
-<div class="client-group">
-  <label class="client-text">建物名</label>
-    <%= f.text_field :building_name, class: "input-default"%>
-</div>
-<div class="client-group">
-  <label class="client-text">電話番号</label>
-    <%= f.text_field :phone_number, class: "input-default"%>
-</div>
-<div class="save-btn">
-  <%= f.submit"登録",class:"save-red-btn" %>
-</div>
+  <div class="client-groups">
+  <div class="client-group">
+    <label class="client-text">名前</label>
+      <%= f.text_field :name, class: "input-default"%>
+  </div>
+  <div class="client-group">
+    <label class="client-text">郵便番号</label>
+      <%= f.text_field :postal_code, class: "input-default"%>
+  </div>
+  <div class="client-group">
+    <label class="client-text">都道府県</label>
+      <%= f.collection_select(:prefectures_id ,Prefectures.all, :id, :name, {}, {class:"select-box", id:"prefecture"})%>
+  </div>
+  <div class="client-group">
+    <label class="client-text">市区町村</label>
+      <%= f.text_field :city, class: "input-default"%>
+  </div>
+  <div class="client-group">
+    <label class="client-text">番地</label>
+      <%= f.text_field :address, class: "input-default"%>
+  </div>
+  <div class="client-group">
+    <label class="client-text">建物名</label>
+      <%= f.text_field :building_name, class: "input-default"%>
+  </div>
+  <div class="client-group">
+    <label class="client-text">電話番号</label>
+      <%= f.text_field :phone_number, class: "input-default"%>
+  </div>
+  <div class="save-btn">
+    <%= f.submit"登録",class:"save-red-btn" %>
+  </div>
+  </div>
 <% end %>
+</div>

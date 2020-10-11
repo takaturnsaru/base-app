@@ -55,16 +55,21 @@ li{
 }
 
 
-
 .main{
   background-color:beige;
   height: calc(100vh - 100px);
   width: 100%;
+  overflow: scroll;
 }
+
+
+
 
 .calendar{
   background-color: coral;
   width: 800px;
   height: 463px;
 }
+
+
 

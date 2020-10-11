@@ -1,0 +1,45 @@
+.clock-all{
+  background-color: beige;
+  height: calc(100vh - 100px);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.clock{
+  border: 3px solid dodgerblue;
+  height: 300px;
+  width: 400px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.clock-frame{
+  font-size: 40px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  border-bottom:3px solid dodgerblue;
+}
+
+.stamping-btn{
+  background-color: olivedrab;
+  color: white;
+  font-size: 30px;
+  width: 200px;
+  height: 70px;
+}
+
+.working-data{
+  position: fixed;
+}
+
+.work-time-date{
+  font-size: 25px;
+}

@@ -1,9 +1,9 @@
 <div class="header">
   <%= render "schedules/menu_bar"%>
 </div>
-<div class="client-data">
-  <h2 class="client-profile">顧客情報</h2>
-  <%= link_to "顧客情報変更",edit_client_path, class: "client-edet-tag"%>
+<div class="main">
+  <h2 class="client-content">顧客情報</h2>
+  <%= link_to "顧客情報変更",edit_client_path, class: "content-tab"%>
     <div class="client-date-list">
       <label class="client-item">名前</label>
       <div class="client-value"><%= @client.name%></div>
@@ -21,20 +21,20 @@
       <div class="client-value"><%= @client.phone_number%></div>
     </div>
 
-    <div class="purhaser-data">
+    <div class="purchaser-data">
       <h2 class="heading">購入履歴</h2>
-      <%= link_to "購入等履歴登録",new_client_purchaser_path(@client), class:"purchaser-new-data"%>
+      <%= link_to "購入履歴登録",new_client_purchaser_path(@client), class:"content-tab"%>
     </div>
-    <div class="purchaser-data-list">
-    <%@purchasers.each do |purchaser|%>
-    <%=purchaser.buyday%>
-    <%=purchaser.product_specification[:name]%>
-    <%=purchaser.unit_price%>
-    <%=purchaser.quanity%>
-    <%=purchaser.amount%>
-    <%= link_to "編集", edit_client_purchaser_path(@client.id,purchaser.id), class: "purchaser-edit"%>
-    <%= link_to "削除", client_purchaser_path(@client.id,purchaser.id),method: :delete,class: "purchaser-destroy"%>
+      <%@purchasers.each do |purchaser|%>
+    <div class="purchaser-data-lists">
+      <div class="purchaser-data-list"><%=purchaser.buyday%></div>
+      <div class="purchaser-data-list"><%=purchaser.product_specification[:name]%></div>
+      <div class="purchaser-data-list"><%=purchaser.unit_price%></div>
+      <div class="purchaser-data-list"><%=purchaser.quanity%></div>
+      <div class="purchaser-data-list"><%=purchaser.amount%></div>
+        <%= link_to "編集", edit_client_purchaser_path(@client.id,purchaser.id), class: "purchaser-edit"%>
+        <%= link_to "削除", client_purchaser_path(@client.id,purchaser.id),method: :delete,class: "purchaser-destroy"%>
+    </div>
     <% end %>
-    </div>
 
 </div>
