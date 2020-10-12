@@ -6,8 +6,8 @@
 </p>
 
 <p>
-  <strong>開始時間:</strong>
-  <%= @meeting.start_time.strftime("%Y-%m-%d %H:%M")%>
+  <strong>詳細:</strong>
+  <%= @meeting.text%>
 </p>
 
 <%= link_to 'Edit', edit_meeting_path(@meeting.id) %> 

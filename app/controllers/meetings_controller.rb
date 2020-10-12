@@ -43,31 +43,20 @@ class MeetingsController < ApplicationController
     else
       render edit
     end
-    # respond_to do |format|
-    #   if @meeting.update(meeting_params)
-    #     format.html { redirect_to @meeting, notice: 'Meeting was successfully updated.' }
-    #     format.json { render :show, status: :ok, location: @meeting }
-    #   else
-    #     format.html { render :edit }
-    #     format.json { render json: @meeting.errors, status: :unprocessable_entity }
-    #   end
-    # end
   end
 
-  # DELETE /meetings/1
-  # DELETE /meetings/1.json
   def destroy
     @meeting.destroy
     redirect_to schedules_path
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_meeting
+
+  def set_meeting
       @meeting = Meeting.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
+
     def meeting_params
       params.require(:meeting).permit(:name, :start_time)
     end

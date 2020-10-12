@@ -8,9 +8,9 @@
       <p id="notice"><%= notice %></p>
 
 
-
+  <div class="calendar">
   <%= month_calendar events: @meetings do |date,meetings| %>
-  <%= date%>
+  <%= date.strftime("%-d")%>
 
     <% meetings.each do |meeting| %>
       <div>
@@ -20,6 +20,7 @@
       </div>
     <% end %>
   <% end %>
+  </div>
 
 
   <br>
@@ -31,8 +32,8 @@
     </div>
 
     <div class="field">
-      <%= f.label "開始時間" %>
-      <%= f.datetime_select :start_time %>
+      <%= f.label "詳細" %>
+      <%= f.text_field :text %>
     </div>
 
     <div class="actions">

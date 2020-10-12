@@ -63,13 +63,10 @@ li{
 }
 
 
-
-
 .calendar{
-  background-color: coral;
-  width: 800px;
-  height: 463px;
+  font-family: OSAKA;
+  width: 700px;
+  height: 570px;
+  background-color: gray;
+  margin: 20px 0 0 20px;
 }
-
-
-
