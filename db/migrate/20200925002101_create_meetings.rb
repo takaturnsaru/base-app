@@ -3,7 +3,6 @@ class CreateMeetings < ActiveRecord::Migration[6.0]
     create_table :meetings do |t|
       t.string :name,          nill:false
       t.datetime :start_time,  nill:false
-      t.references :schedule,  nill:false,foregen_key:true
 
       t.timestamps
     end

@@ -3,9 +3,8 @@ Rails.application.routes.draw do
   get 'products/index'
   devise_for :users
   root to: 'schedules#index'
-  resources :schedules, only: [:index,:create,:destroy] do
-    resources :meetings 
-  end
+  resources :schedules, only: [:index,:create,:destroy] 
+  resources :meetings 
   resources :clients, only: [:index, :new, :create, :show, :edit, :update] do
     resources :purchasers, only: [:new,:create,:edit,:update,:destroy]
   end

@@ -25,16 +25,18 @@ class MeetingsController < ApplicationController
   # POST /meetings.json
   def create
     @meeting = Meeting.new(meeting_params)
-
-    respond_to do |format|
-      if @meeting.save
-        format.html { redirect_to @meeting, notice: 'Meeting was successfully created.' }
-        format.json { render :show, status: :created, location: @meeting }
-      else
-        format.html { render :new }
-        format.json { render json: @meeting.errors, status: :unprocessable_entity }
-      end
-    end
+    @meeting.valid?
+    @meeting.save
+    redirect_to schedules_path
+    # respond_to do |format|
+    #   if @meeting.save
+    #     format.html { redirect_to @meeting, notice: 'Meeting was successfully created.' }
+    #     format.json { render :show, status: :created, location: @meeting }
+    #   else
+    #     format.html { render :new }
+    #     format.json { render json: @meeting.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   # PATCH/PUT /meetings/1
@@ -69,6 +71,6 @@ class MeetingsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def meeting_params
-      params.require(:meeting).permit(:name, :start_time)
+      params.permit(:name, :start_time)
     end
 end
