@@ -1,14 +1,15 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>予定:</strong>
   <%= @meeting.name %>
 </p>
 
 <p>
-  <strong>Start time:</strong>
-  <%= @meeting.start_time %>
+  <strong>開始時間:</strong>
+  <%= @meeting.start_time.strftime("%Y-%m-%d %H:%M")%>
 </p>
 
-<%= link_to 'Edit', edit_meeting_path(@meeting) %> |
+<%= link_to 'Edit', edit_meeting_path(@meeting.id) %> 
+<%= link_to 'Destroy', meeting_path(@meeting), method: :delete, data: { confirm: 'Are you sure?' } %>
 <%= link_to 'Back', meetings_path %>

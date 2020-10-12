@@ -18,8 +18,6 @@ class MeetingsController < ApplicationController
   end
 
   # GET /meetings/1/edit
-  def edit
-  end
 
   # POST /meetings
   # POST /meetings.json
@@ -28,39 +26,39 @@ class MeetingsController < ApplicationController
     @meeting.valid?
     @meeting.save
     redirect_to schedules_path
-    # respond_to do |format|
-    #   if @meeting.save
-    #     format.html { redirect_to @meeting, notice: 'Meeting was successfully created.' }
-    #     format.json { render :show, status: :created, location: @meeting }
-    #   else
-    #     format.html { render :new }
-    #     format.json { render json: @meeting.errors, status: :unprocessable_entity }
-    #   end
-    # end
   end
 
   # PATCH/PUT /meetings/1
   # PATCH/PUT /meetings/1.json
+
+  def edit
+    @meetings = Meeting.all
+  end
+
   def update
-    respond_to do |format|
-      if @meeting.update(meeting_params)
-        format.html { redirect_to @meeting, notice: 'Meeting was successfully updated.' }
-        format.json { render :show, status: :ok, location: @meeting }
-      else
-        format.html { render :edit }
-        format.json { render json: @meeting.errors, status: :unprocessable_entity }
-      end
+    @meeting.update(meeting_params)
+    if @meeting.valid?
+      @meeting.save 
+      redirect_to schedules_path
+    else
+      render edit
     end
+    # respond_to do |format|
+    #   if @meeting.update(meeting_params)
+    #     format.html { redirect_to @meeting, notice: 'Meeting was successfully updated.' }
+    #     format.json { render :show, status: :ok, location: @meeting }
+    #   else
+    #     format.html { render :edit }
+    #     format.json { render json: @meeting.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   # DELETE /meetings/1
   # DELETE /meetings/1.json
   def destroy
     @meeting.destroy
-    respond_to do |format|
-      format.html { redirect_to meetings_url, notice: 'Meeting was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    redirect_to schedules_path
   end
 
   private
@@ -71,6 +69,6 @@ class MeetingsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def meeting_params
-      params.permit(:name, :start_time)
+      params.require(:meeting).permit(:name, :start_time)
     end
 end
