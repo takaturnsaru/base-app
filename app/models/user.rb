@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
          has_many :schedules
          has_many :work_time
+         has_many :meetings
 
          validates :name,presence:true
 end

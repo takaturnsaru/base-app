@@ -1,14 +1,51 @@
-<p id="notice"><%= notice %></p>
+  <div class="header">
+    <%= render "menu_bar"%>
+  </div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @meeting.name %>
-</p>
+<div class="main">
+    <% if user_signed_in? %>
+      <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Start time:</strong>
-  <%= @meeting.start_time %>
-</p>
+  <div class="calendar-all">
+  <div class="calendar">
+  <%= month_calendar events: @meetings do |date,meetings| %>
+  <%= date.strftime("%-d")%>
 
-<%= link_to 'Edit', edit_meeting_path(@meeting) %> |
-<%= link_to 'Back', meetings_path %>
+    <% meetings.each do |meeting| %>
+      <div>
+        <%=link_to meeting_path(meeting.id) do%>
+        <%= meeting.name %>
+        <% end %>
+      </div>
+    <% end %>
+  <% end %>
+  </div>
+
+
+<div class="calendar-show">
+<div class="calendar-show-group">
+  <strong class="calendar-content">日付:</strong>
+  <div class="calendar-show-date"><%= @meeting.start_time.time.strftime("%Y-%m-%d ") %></div>
+</div>
+
+
+<div class="calendar-show-group">
+  <strong class="calendar-content">予定:</strong>
+  <div class="calendar-show-date"><%= @meeting.name %></div>
+</div>
+
+
+<div class="calendar-show-group">
+  <strong class="calendar-content">詳細:</strong>
+  <div class="calendar-show-date"><%= @meeting.text%></div>
+</div>
+
+
+<div class="calendar-show-group">
+<%= link_to '編集', edit_meeting_path(@meeting.id),class:"calendar-content-btn"%> 
+<%= link_to '削除', meeting_path(@meeting), method: :delete,class:"calendar-content-btn", data: { confirm: 'Are you sure?' } %>
+<%= link_to '戻る', meetings_path,class:"calendar-content-btn"%>
+</div>
+<% end %>
+</div>
+</div>

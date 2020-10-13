@@ -1,11 +1,9 @@
 Rails.application.routes.draw do
-  get 'memo/index'
   get 'products/index'
   devise_for :users
-  root to: 'schedules#index'
-  resources :schedules, only: [:index,:create,:destroy] do
-    resources :meetings 
-  end
+  get "users/show" => "users#show"
+  root to: 'meetings#index'
+  resources :meetings 
   resources :clients, only: [:index, :new, :create, :show, :edit, :update] do
     resources :purchasers, only: [:new,:create,:edit,:update,:destroy]
   end

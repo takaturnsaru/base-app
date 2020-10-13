@@ -4,7 +4,6 @@ class MeetingsController < ApplicationController
   # GET /meetings
   # GET /meetings.json
   def index
-    @meetings = Meeting.all
   end
 
   # GET /meetings/1
@@ -18,57 +17,50 @@ class MeetingsController < ApplicationController
   end
 
   # GET /meetings/1/edit
-  def edit
-  end
 
   # POST /meetings
   # POST /meetings.json
   def create
     @meeting = Meeting.new(meeting_params)
-
-    respond_to do |format|
-      if @meeting.save
-        format.html { redirect_to @meeting, notice: 'Meeting was successfully created.' }
-        format.json { render :show, status: :created, location: @meeting }
-      else
-        format.html { render :new }
-        format.json { render json: @meeting.errors, status: :unprocessable_entity }
-      end
-    end
+    @meeting.valid?
+    @meeting.save
+    redirect_to users_show_path
   end
 
   # PATCH/PUT /meetings/1
   # PATCH/PUT /meetings/1.json
+
+  def edit
+    @meetings = current_user.meetings.all
+  end
+
   def update
-    respond_to do |format|
-      if @meeting.update(meeting_params)
-        format.html { redirect_to @meeting, notice: 'Meeting was successfully updated.' }
-        format.json { render :show, status: :ok, location: @meeting }
-      else
-        format.html { render :edit }
-        format.json { render json: @meeting.errors, status: :unprocessable_entity }
-      end
+    @meeting.update(meeting_params)
+    if @meeting.valid?
+      @meeting.save 
+      redirect_to users_show_path
+    else
+      render edit
     end
   end
 
-  # DELETE /meetings/1
-  # DELETE /meetings/1.json
+  def show
+    @meetings = current_user.meetings.all
+  end
+
   def destroy
     @meeting.destroy
-    respond_to do |format|
-      format.html { redirect_to meetings_url, notice: 'Meeting was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    redirect_to users_show_path
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_meeting
-      @meeting = Meeting.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def meeting_params
-      params.require(:meeting).permit(:name, :start_time)
-    end
+  def set_meeting
+    @meeting = Meeting.find(params[:id])
+  end
+
+
+  def meeting_params
+    params.require(:meeting).permit(:name, :start_time,:text).merge(user_id:current_user.id)
+  end
 end

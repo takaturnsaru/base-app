@@ -1,6 +1,47 @@
-<h1>Editing Meeting</h1>
+<div class="all">
+  <div class="header">
+    <%= render "meetings/menu_bar"%>
+  </div>
+  
+  <div class="main">
+    <% if user_signed_in? %>
+      <p id="notice"><%= notice %></p>
 
-<%= render 'form', meeting: @meeting %>
+  <div class="calendar-all">
+  <div class="calendar">
+  <%= month_calendar events: @meetings do |date,meetings| %>
+  <%= date%>
 
-<%= link_to 'Show', @meeting %> |
-<%= link_to 'Back', meetings_path %>
+    <% meetings.each do |meeting| %>
+      <div>
+        <%= meeting.name %>
+      </div>
+    <% end %>
+  <% end %>
+  </div>
+
+
+  <br>
+  <%= form_with model:@meeting, url:meeting_path(@meeting),class:"calendar-content-group",local:true do |f| %>
+
+    <div class="calendar-field">
+      <%= f.label "日付",class:"calendar-content"%>
+      <%= f.date_select :start_time,class:"calendar-date-field"%>      
+      </div>
+
+    <div class="calendar-field">
+      <%= f.label "予定",class:"calendar-content"%>
+      <%= f.text_field :name,class:"calendar-name-field"%>
+    </div>
+
+    <div class="calendar-field">
+      <%= f.label "詳細",class:"calendar-content"%>
+      <%= f.text_area :text,class:"calendar-text-field"%>
+    </div>
+
+    <div class="actions">
+      <%= f.submit"登録",class:"save-blue-btn" %>
+    </div>
+  <% end %>
+  <% end %>
+</div>
