@@ -1,4 +1,6 @@
 class Meeting < ApplicationRecord
 
-  validate :name,:text,presence:true
+  belongs_to :user
+
+  validates :name,:text,:start_time,presence:true
 end

@@ -1,8 +1,8 @@
 <div class="header">
-    <% if user_signed_in? %>
+  <% if user_signed_in? %>
     <div class="user-name"><%= current_user.name%></div>
     <div class="menu-lists">
-      <%= link_to "トップページ",root_path,class:"menu-list"%>
+      <%= link_to "スケジュール",users_show_path,class:"menu-list"%>
       <%= link_to "タイムカード",work_times_path,class:"menu-list"%>
       <%= link_to "顧客", clients_path,class:"menu-list"%>
       <%= link_to "製品",products_path,class:"menu-list"%>
@@ -10,12 +10,11 @@
       <%= link_to "slack","https://app.slack.com/client/T0134LBLWUB/C013U9DR9K2",class:"menu-list"%>
       <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"menu-list"%>
     </div>
-    <% else %>
+  <% else %>
     <div class="company-name">〇〇株式会社</div>
     <div class="before-login">
       <%= link_to "ログイン", new_user_session_path, class:"before-menu"%>
       <%= link_to "新規登録", new_user_registration_path,class:"before-menu"%>
     </div>
-    <% end %>
-  </div>
+  <% end %>
 </div>

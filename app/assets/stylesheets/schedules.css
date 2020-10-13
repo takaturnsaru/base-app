@@ -57,16 +57,66 @@ li{
 
 .main{
   background-color:beige;
+  font-family: OSAKA;
   height: calc(100vh - 100px);
   width: 100%;
   overflow: scroll;
 }
 
+.calendar-all{
+  display: flex;
+}
+
 
 .calendar{
   font-family: OSAKA;
-  width: 700px;
+  width: 900px;
   height: 570px;
-  background-color: gray;
   margin: 20px 0 0 20px;
+}
+
+.calendar-title{
+  font-size: 25px;
+}
+
+.calendar-content-group{
+  margin: 35px 0 0 35px;
+}
+
+.calendar-field{
+  margin: 20px;
+}
+
+.calendar-date-field{
+  height: 50px;
+}
+
+.calendar-content{
+  font-size: 20px;
+  color: black;
+  margin: 0 10px 0 0;
+  display: flex;
+  align-items: center;
+}
+
+.calendar-name-field{
+  font-size: １0px;
+  width: 300px;
+}
+
+.calendar-text-field{
+  height: 200px;
+  width: 300px;
+}
+
+.calendar-show{
+  margin:  0 100px 60px;
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.calendar-show-date{
+  font-size: 35px;
 }
