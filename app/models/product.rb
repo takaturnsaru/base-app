@@ -2,6 +2,8 @@ class Product < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :grade, shortcuts: [:name]
 
+  belongs_to :admin
+
   with_options presence: true do
     validates :name
     validates :grade_id, numericality: {other_then: 0, message:"Grade Select"}

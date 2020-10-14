@@ -4,7 +4,9 @@
 <div class="main">
   <h2 class="product-content">製品一覧</h2>
   <div class="product-lists">
+  <% if admin_signed_in?%>
   <%= link_to "新製品登録",new_product_path,class:"new-tab"%>
+  <% end %>
   <% @products.each do |product|%>
     <div class="product-list">
       <span class="product-data">製品 - <%= product.name%></span>

@@ -27,11 +27,11 @@
     </div>
       <%@purchasers.each do |purchaser|%>
     <div class="purchaser-data-lists">
-      <div class="purchaser-data-list"><%=purchaser.buyday%></div>
-      <div class="purchaser-data-list"><%=purchaser.product_specification[:name]%></div>
-      <div class="purchaser-data-list"><%=purchaser.unit_price%></div>
-      <div class="purchaser-data-list"><%=purchaser.quanity%></div>
-      <div class="purchaser-data-list"><%=purchaser.amount%></div>
+      <div class="purchaser-data-list">購入日-<%=purchaser.buyday%></div>
+      <div class="purchaser-data-list">製品・仕様-<%=purchaser.product_specification[:name]%></div>
+      <div class="purchaser-data-list"> 単価-¥<%=purchaser.unit_price%></div>
+      <div class="purchaser-data-list"> 数量-<%=purchaser.quanity%></div>
+      <div class="purchaser-data-list"> 合計-¥<%=purchaser.amount%></div>
         <%= link_to "編集", edit_client_purchaser_path(@client.id,purchaser.id), class: "purchaser-edit"%>
         <%= link_to "削除", client_purchaser_path(@client.id,purchaser.id),method: :delete,class: "purchaser-destroy"%>
     </div>

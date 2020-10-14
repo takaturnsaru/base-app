@@ -13,11 +13,23 @@
       <%= link_to "slack","https://app.slack.com/client/T0134LBLWUB/C013U9DR9K2",class:"menu-list"%>
       <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"menu-list"%>
     </div>
+  <%elsif admin_signed_in?%>
+      <%=link_to "/", class:"user-name" do%>
+        <%=current_admin.name%>
+      <% end %>
+      <div class="menu-lists">
+      <%= link_to "製品",products_path,class:"menu-list"%>
+      <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"menu-list"%>
+      </div>
+
+
   <% else %>
     <div class="company-name">〇〇株式会社</div>
     <div class="before-login">
       <%= link_to "ログイン", new_user_session_path, class:"before-menu"%>
       <%= link_to "新規登録", new_user_registration_path,class:"before-menu"%>
+      <%= link_to "管理者", new_admin_session_path, class:"before-menu"%>
     </div>
   <% end %>
 </div>
+
