@@ -1,6 +1,9 @@
 <div class="header">
   <% if user_signed_in? %>
-    <div class="user-name"><%= current_user.name%></div>
+    <%=link_to "/", class:"user-name" do%>
+    <%=current_user.name %>
+    <% end %>
+
     <div class="menu-lists">
       <%= link_to "スケジュール",users_show_path,class:"menu-list"%>
       <%= link_to "タイムカード",work_times_path,class:"menu-list"%>

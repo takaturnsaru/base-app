@@ -20,7 +20,9 @@
 
 .user-name{
   font-size: 30px;
+  color: black;
   margin: 30px;
+  text-decoration: none;
 }
 
 .menu-lists{
