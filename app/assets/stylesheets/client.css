@@ -71,20 +71,21 @@
 }
 
 .purchaser-data-list{
-  margin: 30px 0 ;
+  margin: 30px  ;
   font-size: 25px;
+  
 }
 
 
 .purchaser-edit{
   color: dodgerblue;
-  margin: 30px 20px ;
+  margin: 65px 20px 0 20px ;
   font-size: 25px;
 
 }
 
 .purchaser-destroy{
   color: dodgerblue;
-  margin: 30px 20px ;
+  margin: 65px 20px 0 20px ;
   font-size: 25px;
 }
