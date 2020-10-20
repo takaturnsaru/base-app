@@ -5,8 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
          has_many :schedules
-         has_many :work_time
+         has_many :work_times
          has_many :meetings
+         has_many :leave_times
 
          validates :name,presence:true
 end
