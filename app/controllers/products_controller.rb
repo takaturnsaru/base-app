@@ -20,6 +20,6 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    params.permit(:name,:grade_id,:price)
+    params.permit(:name,:grade_id,:price).merge(admin_id:current_admin.id)
   end
 end
