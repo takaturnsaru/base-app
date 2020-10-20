@@ -5,7 +5,7 @@ function click() {
     const XHR = new XMLHttpRequest();
     XHR.open("POST", "/work_times", true);
     XHR.responseType = "json";
-    XHR.send(formData);
+    XHR.send(formData.strftime("%Y年,%m月%d日,%H時%M分"));
     XHR.onload = () => {
       if (XHR.status != 200) {
         alert(`Error ${XHR.status}: ${XHR.statusText}`);
@@ -16,7 +16,7 @@ function click() {
       const HTML = `
       <div class="work-time" data-id=${item.id}>
         <div class="work-time-date">
-          ${item.time}
+          ${item.attendance}
         </div>
       </div>`;
     list.insertAdjacentHTML("afterend", HTML);

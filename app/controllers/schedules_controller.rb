@@ -1,7 +1,8 @@
 class SchedulesController < ApplicationController
   def index
-    @schedules = Schedule.all
-    @meetings = current_user.meetings.all
-    @meeting = Meeting.new
+    @work_times = current_user.work_times.all.order("created_at DESC")
+    @leave_times = current_user.leave_times.all.order("created_at DESC")
+    @work_time = WorkTime.new
+    @leave_time = LeaveTime.new
   end
 end

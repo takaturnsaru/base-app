@@ -1,52 +1,41 @@
-<div class="all">
-  <div class="header">
-    <%= render "menu_bar"%>
+<div class="header">
+  <%= render "meetings/menu_bar"%>
+</div>
+<div class="main">
+<div class="clock-all">
+  <div class="clock">
+    <div class="clock-frame",id="clock-frame">
+      <span id="clock-date"></span>
+      <span id="clock-time"></span>
+    </div>    
+    <div class="stamping">
+      <%= form_with url:work_times_path, method: :post, id: "form" do |f|%>
+        <%= f.submit "出勤", class:"stamping-btn",id:"submit"%>
+      <% end %>
+      <%= form_with url:leave_times_path, method: :post, id: "form" do |f|%>
+        <%= f.submit "退勤", class:"stamping-btn",id:"submit"%>
+      <% end %>
+    </div>
   </div>
-  
-  <div class="main">
-    <% if user_signed_in? || admin_singned_in? %>
 
-  <div class="calendar-all">
-  <div class="calendar">
-  <%= month_calendar events: @meetings do |date,meetings| %>
-  <%= date.strftime("%-d")%>
-
-    <% meetings.each do |meeting| %>
-      <div>
-        <%=link_to meeting_path(meeting.id) do%>
-        <%= meeting.name %>
+  <div class="working-data">
+    <div class="time-dates">
+        <% @work_times.each do |work_time|%>
+        <div class="time-date">
+          出社ー<%= work_time.attendance.strftime("%Y年,%m月%d日,%H時%M分")%>
+        </div>
         <% end %>
-      </div>
-    <% end %>
-  <% end %>
+    </div>
+    <div class="time-dates">
+      <% @leave_times.each do |leave_time|%>
+        <div class="time-date">
+          退社ー<%= leave_time.leave.strftime("%Y年,%m月%d日,%H時%M分")%>
+        </div>
+      <% end %>
+    </div>
   </div>
-
-
-  <%= form_with model:@meeting, url:meetings_path(@meeting),class:"calendar-content-group",local:true do |f| %>
-
-    <div class="calendar-field">
-      <%= f.label "日付",class:"calendar-content"%>
-      <%= f.date_select :start_time,class:"calendar-date-field"%>      
-      </div>
-
-    <div class="calendar-field">
-      <%= f.label "予定",class:"calendar-content"%>
-      <%= f.text_field :name,class:"calendar-name-field"%>
-    </div>
-
-    <div class="calendar-field">
-      <%= f.label "詳細",class:"calendar-content"%>
-      <%= f.text_area :text,class:"calendar-text-field"%>
-    </div>
-
-    <div class="actions">
-      <%= f.submit"登録",class:"save-blue-btn" %>
-    </div>
-
-  <% end %>
-  <% end %>
-  </div>
-  
+</div>
 </div>
 
-  
+
+

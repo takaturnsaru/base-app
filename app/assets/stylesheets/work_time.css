@@ -10,7 +10,7 @@
 
 .clock{
   border: 3px solid dodgerblue;
-  height: 300px;
+  height: 250px;
   width: 400px;
   display: flex;
   justify-content: space-around;
@@ -28,18 +28,30 @@
   border-bottom:3px solid dodgerblue;
 }
 
+.stamping{
+  display: flex;
+}
+
 .stamping-btn{
   background-color: olivedrab;
   color: white;
-  font-size: 30px;
-  width: 200px;
+  font-size: 25px;
+  width: 100px;
   height: 70px;
+  margin: 0 30px;
 }
 
 .working-data{
-  position: fixed;
+  display: flex;
 }
 
-.work-time-date{
+
+.time-dates{
   font-size: 25px;
+  margin: 30px;
+}
+
+.time-date{
+  margin: 15px 0;
+  border-bottom: 2px solid brown;
 }
