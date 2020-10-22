@@ -12,6 +12,11 @@
       <span class="product-data">製品 - <%= product.name%></span>
       <span class="product-data">仕様 - <%= product.grade.name%></span>
       <span class="product-data">¥ -<%= product.price%></span>
+      <% if admin_signed_in?%>
+      <%= link_to "編集",edit_product_path(product.id),class: "product-content-btn"%>
+      <%= link_to "削除",product_path(product.id),method: :delete, class: "product-content-btn"%>
+      <% end %>
+
     </div>
   <% end %>
   </div>

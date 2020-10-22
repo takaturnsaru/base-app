@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   resources :clients, only: [:index, :new, :create, :show, :edit, :update] do
     resources :purchasers, only: [:new,:create,:edit,:update,:destroy]
   end
-  resources :products, only: [:index, :new, :create,:edit,:update]
+  resources :products
 
   
 end

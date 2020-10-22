@@ -24,7 +24,7 @@
 <div class="calendar-show">
 <div class="calendar-show-group">
   <strong class="calendar-content">日付:</strong>
-  <div class="calendar-show-date"><%= @meeting.start_time.time.strftime("%Y-%m-%d ") %></div>
+  <div class="calendar-show-date"><%= @meeting.start_time.time.strftime("%Y年%m月%d日") %></div>
 </div>
 
 
@@ -42,7 +42,7 @@
 
 <div class="calendar-show-group">
 <%= link_to '編集', edit_meeting_path(@meeting.id),class:"calendar-content-btn"%> 
-<%= link_to '削除', meeting_path(@meeting), method: :delete,class:"calendar-content-btn", data: { confirm: 'Are you sure?' } %>
+<%= link_to '削除', meeting_path(@meeting), method: :delete,class:"calendar-content-btn", data: { confirm: '削除してもよろしいですか?' } %>
 <%= link_to '戻る', meetings_path,class:"calendar-content-btn"%>
 </div>
 <% end %>

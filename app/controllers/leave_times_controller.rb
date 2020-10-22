@@ -3,7 +3,7 @@ class LeaveTimesController < ApplicationController
   end
   
   def create
-    @leave_time = LeaveTime.create(leave:Time.current,user_id:current_user.id)
+    @leave_time = LeaveTime.new(leave:Time.current,user_id:current_user.id)
     @leave_time.valid?
     @leave_time.save
     redirect_to schedules_path

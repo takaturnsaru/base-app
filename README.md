@@ -7,8 +7,25 @@
 今回のアプリケーションは、営業職の方をターゲットにして制作しました。顧客の管理や製品情報、メール機能、社内でのやり取りツールなど、数々の機能があるのにもかかわらず、１つ１つ開いて使っているという営業の方がいて、１つの画面からいろいろなツールに遷移できるものがあったらいいなという声を聞いたので制作することにしました。営業職の方達といっても年齢やパソコンの経験がバラバラだと思うので、パソコンが全然使えない方でも簡単に使用できることを意識して作りました。
 
 ## DEMO
+
+- ログイン画面
 ![ezgif com-gif-maker](https://user-images.githubusercontent.com/69668280/96561366-6de85a00-12fa-11eb-900f-7416eecc0f51.gif)
 
+- スケジュール管理機能
+![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/69668280/96584707-9764ae00-1319-11eb-8a7f-f0fef9d3b040.gif)
+
+- 勤怠管理機能
+<img width="1220" alt="スクリーンショット 2020-10-20 21 21 38" src="https://user-images.githubusercontent.com/69668280/96586418-f4f9fa00-131b-11eb-9cd9-b3611221306b.png">
+
+- 顧客管理機能
+![ezgif com-gif-maker (2)](https://user-images.githubusercontent.com/69668280/96586246-b401e580-131b-11eb-99e2-49fd6980d16f.gif)
+
+- 製品一覧機能
+<img width="1211" alt="スクリーンショット 2020-10-20 21 33 14" src="https://user-images.githubusercontent.com/69668280/96586379-e14e9380-131b-11eb-959d-830f509699a5.png">
+
+- 管理者ページ
+![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/69668280/96701481-9c823580-13cb-11eb-82e4-d0b3ace5e23c.gif)
+管理者の新規作成、編集、削除できるようにしました。
 
 
 ## 使用技術
@@ -71,7 +88,6 @@ VSCode
 ### スケジュール管理機能
 - 当月のカレンダーが表示されている
 - カレンダーに予定を書き込める
-- メモや、やることを登録できるスペースがある
 
 ### 顧客管理機能
 - 顧客一覧が見れる
@@ -85,6 +101,7 @@ VSCode
 
 ### 製品管理機能
 - 製品の一覧が見れる
+- 管理者のみ編集、削除ができる
 
 ### gmail遷移機能
 - gmailページに遷移できるボタンがある
@@ -106,8 +123,23 @@ VSCode
 |password  |string     |nill:false       |
 
 ## Association
--has_many :work_times
--has_many :schedules
+has_many :schedules
+has_many :work_times
+has_many :meetings
+has_many :leave_times
+
+
+## adminsテーブル
+
+|column    |type     |options            |
+|----------|---------|-------------------|
+|name      |string   |null:false         |
+|email     |string   |null:false         |
+|password  |string   |null:false         |
+
+## association
+
+- has_many :products
 
 
 
@@ -115,12 +147,22 @@ VSCode
 
 |column            |type       |options                      |
 |------------------|-----------|-----------------------------|
-|time              |datetime   |nill:false                   |
+|attendence        |datetime   |nill:false                   |
 |user              |references |nill:false, foregin_key:true |
 
 ## Association
--belongs_to :user
+- belongs_to :user
 
+
+## Leave_timesテーブル
+
+|column            |type       |options                      |
+|------------------|-----------|-----------------------------|
+|leave             |datetime   |nill:false                   |
+|user              |references |nill:false, foregin_key:true |
+
+## Association
+- belongs_to :user
 
 
 ## Schedulesテーブル
@@ -131,22 +173,21 @@ VSCode
 |user             |references  |nill:false,foregin_key:true  |
 
 ## Associatopn
--belongs_to :user
--has_many :meetings
+- belongs_to :user
+- has_many :meetings
 
 
 
-## meetingsテーブル
+## Meetingsテーブル
 
 |column           |type        |options                      |
 |-----------------|------------|-----------------------------|
 |name             |string      |null:false                   |
 |start_time       |datetime    |default:""                   |
-|schedule         |references  |nill:false,foregin_key:true  |
+|user             |references  |nill:false,foregin_key:true  |
 
 ## Association
--belongs_to :schedule
-
+- belongs_to :user
 
 
 ## Clientsテーブル
@@ -162,7 +203,7 @@ VSCode
 |phone_number     |string      |nill:false                   |
 
 ## Association
--has_many :purchasers
+- has_many :purchasers
 
 
 
@@ -173,7 +214,10 @@ VSCode
 |name             |string      |nill:false                    |
 |grade_id         |string      |nill:false                    |
 |price            |integer     |nill:false                    |
+|admin            |references  |nill:false,foregin_key:true   |
 
+## Association
+- belongs_to :admin
 
 
 ## purchasersテーブル
@@ -188,6 +232,6 @@ VSCode
 |client                   |references  |nill:false,foregin_key:true   |
 
 ## Association
--belongs_to :client
+- belongs_to :client
 
 

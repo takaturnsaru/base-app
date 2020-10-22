@@ -9,10 +9,10 @@
       <span id="clock-time"></span>
     </div>    
     <div class="stamping">
-      <%= form_with url:work_times_path, method: :post, id: "form" do |f|%>
+      <%= form_with url:work_times_path, id: "form",local:true do |f|%>
         <%= f.submit "出勤", class:"stamping-btn",id:"submit"%>
       <% end %>
-      <%= form_with url:leave_times_path, method: :post, id: "form" do |f|%>
+      <%= form_with url:leave_times_path, id: "form",local:true do |f|%>
         <%= f.submit "退勤", class:"stamping-btn",id:"submit"%>
       <% end %>
     </div>
@@ -23,7 +23,9 @@
         <% @work_times.each do |work_time|%>
         <div class="time-date">
           出社ー<%= work_time.attendance.strftime("%Y年,%m月%d日,%H時%M分")%>
+          
         </div>
+        
         <% end %>
     </div>
     <div class="time-dates">

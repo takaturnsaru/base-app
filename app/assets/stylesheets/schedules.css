@@ -94,7 +94,7 @@ li{
 }
 
 .calendar-content{
-  font-size: 20px;
+  font-size: 30px;
   color: black;
   margin: 0 10px 0 0;
   display: flex;
@@ -120,5 +120,6 @@ li{
 }
 
 .calendar-show-date{
-  font-size: 35px;
+  font-size: 20px;
+  width: 300px;
 }
