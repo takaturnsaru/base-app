@@ -17,15 +17,14 @@
       <% end %>
     </div>
   </div>
+</div>
 
   <div class="working-data">
     <div class="time-dates">
         <% @work_times.each do |work_time|%>
         <div class="time-date">
           出社ー<%= work_time.attendance.strftime("%Y年,%m月%d日,%H時%M分")%>
-          
         </div>
-        
         <% end %>
     </div>
     <div class="time-dates">
@@ -37,7 +36,7 @@
     </div>
   </div>
 </div>
-</div>
+
 
 
 
