@@ -20,8 +20,12 @@
   </div>
 
 
+
   <br>
   <%= form_with model:@meeting, url:meeting_path(@meeting),class:"calendar-content-group",local:true do |f| %>
+
+    <%= render "error_messages", model: f.object%>
+
 
     <div class="calendar-field">
       <%= f.label "日付",class:"calendar-content"%>
