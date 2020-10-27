@@ -40,7 +40,7 @@ class MeetingsController < ApplicationController
       @meeting.save 
       redirect_to users_show_path
     else
-      render edit
+      render :edit
     end
   end
 
