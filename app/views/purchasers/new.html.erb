@@ -2,6 +2,8 @@
   <%= render "meetings/menu_bar"%>
 </div>
 
+<%= render 'meetings/error_messages', model: @purchaser%>
+
 <div class="main">
   <div class="purchaser-date">
   <%= form_with model:@purchaser,url:client_purchasers_path(@client), class:"purchaser-new",local: true do |f|%>

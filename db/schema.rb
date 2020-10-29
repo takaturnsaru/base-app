@@ -67,10 +67,10 @@ ActiveRecord::Schema.define(version: 2020_10_20_030145) do
 
   create_table "purchasers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.date "buyday", null: false
-    t.integer "product_specification_id"
-    t.integer "unit_price"
-    t.integer "quanity"
-    t.integer "amount"
+    t.integer "product_specification_id", null: false
+    t.integer "unit_price", null: false
+    t.integer "quanity", null: false
+    t.integer "amount", null: false
     t.bigint "client_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

@@ -2,6 +2,7 @@
   <%= render "meetings/menu_bar"%>
 </div>
 
+<%= render 'meetings/error_messages', model: @client %>
 
 <div class="main">
 <%= form_with model:@client,url: client_path,class: "client-data-save", local: true do |f|%>
