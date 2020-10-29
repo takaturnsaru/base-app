@@ -1,0 +1,17 @@
+.error-alert{
+  background-color: beige;
+  color: red;
+  font-weight: holder;
+}
+
+.error_explanation{
+  background-color: beige;
+  color: red;
+  font-weight: holder;
+}
+
+.login-flash-message{
+  background-color: beige;
+  color: red;
+  font-weight: holder;
+}
