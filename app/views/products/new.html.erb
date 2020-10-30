@@ -5,7 +5,7 @@
 <%= render 'meetings/error_messages', model: @product %>
 
 <div class="main">
-  <%= form_with url:products_path,class:"product-save", local:true do |f|%>
+  <%= form_with model:@product,url:products_path,class:"product-save", local:true do |f|%>
   <div class="product-group">
     <label class="product-text">製品名</label>
     <%= f.text_field :name, class:"input-default"%>
