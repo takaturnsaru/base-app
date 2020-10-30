@@ -34,8 +34,10 @@ class PurchasersController < ApplicationController
   end
 
   def destroy
+    @client = Client.find(params[:client_id])
     purchaser = Purchaser.find(params[:id])
     purchaser.destroy
+    redirect_to client_path(@client)
   end
 
 
