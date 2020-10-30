@@ -26,3 +26,5 @@ ja:
         amount: 合計
       admin:
         name: 名前
+        password: パスワード
+        email: メールアドレス
