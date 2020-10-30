@@ -43,7 +43,7 @@ before_action :move_to_root
   private
 
   def product_params
-    params.permit(:name,:grade_id,:price).merge(admin_id:current_admin.id)
+    params.require(:product).permit(:name,:grade_id,:price).merge(admin_id:current_admin.id)
   end
 
   def move_to_root
