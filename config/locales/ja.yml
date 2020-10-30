@@ -1,0 +1,30 @@
+ja: 
+  activerecord:
+    attributes:
+      user:
+        name: 名前
+      meeting:
+        name: 名前
+        start_time: 日時
+        test: 詳細
+      client:
+        name: 名前
+        postal_code: 郵便番号
+        prefectures: 都道府県
+        city: 市区町村
+        address: 番地
+        phone_number: 電話番号
+      product:
+        name: 名前
+        grade: 仕様
+        price: 価格
+      purchaser:
+        buyday: 購入日
+        product_specification: 製品・仕様
+        unit_price: 単価
+        quanity: 数量
+        amount: 合計
+      admin:
+        name: 名前
+        password: パスワード
+        email: メールアドレス

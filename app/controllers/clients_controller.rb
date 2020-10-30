@@ -42,5 +42,10 @@ class ClientsController < ApplicationController
     def client_params
       params.require(:client).permit(:name, :postal_code, :prefectures_id, :city, :address, :building_name, :phone_number)
     end
-  
+    
+    def move_to_index
+      unless user_signe_in?
+        redirect_to action meetings_path
+      end
+    end
 end

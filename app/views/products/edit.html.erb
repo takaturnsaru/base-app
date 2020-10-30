@@ -1,8 +1,11 @@
 <div class="header">
   <%= render "meetings/menu_bar"%>
+
+<%= render 'meetings/error_messages', model: @product %>
+
 </div>
 <div class="main">
-  <%= form_with model:@product,url:products_path,class:"product-save", local:true do |f|%>
+  <%= form_with model:@product,url:product_path,class:"product-save", local:true do |f|%>
   <div class="product-group">
     <label class="product-text">製品名</label>
     <%= f.text_field :name, class:"input-default"%>

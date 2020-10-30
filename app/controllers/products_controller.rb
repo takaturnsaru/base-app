@@ -1,4 +1,7 @@
 class ProductsController < ApplicationController
+before_action :move_to_root
+
+
   def index
     @products = Product.all
   end
@@ -24,8 +27,11 @@ class ProductsController < ApplicationController
   def update
     @product = Product.find(params[:id])
     @product.update(product_params)
-    @product.valid?
-    redirect_to products_path
+    if @product.valid?
+      redirect_to products_path
+    else
+      render :edit
+    end
   end
 
   def destroy
@@ -38,5 +44,11 @@ class ProductsController < ApplicationController
 
   def product_params
     params.permit(:name,:grade_id,:price).merge(admin_id:current_admin.id)
+  end
+
+  def move_to_root
+    unless admin_signed_in? || user_signed_in?
+      redirect_to root_path
+    end
   end
 end

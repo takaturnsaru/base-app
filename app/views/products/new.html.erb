@@ -1,6 +1,9 @@
 <div class="header">
   <%= render "meetings/menu_bar"%>
 </div>
+
+<%= render 'meetings/error_messages', model: @product %>
+
 <div class="main">
   <%= form_with url:products_path,class:"product-save", local:true do |f|%>
   <div class="product-group">

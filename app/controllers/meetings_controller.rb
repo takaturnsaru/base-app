@@ -1,6 +1,6 @@
 class MeetingsController < ApplicationController
   before_action :set_meeting, only: [:show, :edit, :update, :destroy]
-
+  before_action :move_to_root,only: [:edit]
   # GET /meetings
   # GET /meetings.json
   def index
@@ -62,5 +62,11 @@ class MeetingsController < ApplicationController
 
   def meeting_params
     params.require(:meeting).permit(:name, :start_time,:text).merge(user_id:current_user.id)
+  end
+
+  def move_to_root
+    unless user_signed_in?
+      redirect_to root_path
+    end
   end
 end
