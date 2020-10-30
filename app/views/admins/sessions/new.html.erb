@@ -1,10 +1,10 @@
-<h2>Log in</h2>
+<div class= "sign">
+<h2 class = "sign-name">Log in</h2>
 
     <div class='login-flash-message'>
       <%= flash[:alert] %>
     </div>
     <%= form_with model: @admin, url: admin_session_path, id: 'new_user', class: 'new_user', local: true do |f| %>  <div class="field">
-  <div class = "main">
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
@@ -26,6 +26,7 @@
     <%= f.submit "Log in" %>
   </div>
 <% end %>
-
+<div class = "sign-up-links">
 <%= render "admins/shared/links" %>
+</div>
 </div>
