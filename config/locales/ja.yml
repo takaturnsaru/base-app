@@ -4,9 +4,9 @@ ja:
       user:
         name: 名前
       meeting:
-        name: 名前
-        start_time: 日時
-        test: 詳細
+        name: 予定
+        start_time: 日付
+        text: 詳細
       client:
         name: 名前
         postal_code: 郵便番号
