@@ -20,7 +20,7 @@ ja:
         price: 価格
       purchaser:
         buyday: 購入日
-        product_specification: 製品・仕様
+        product_specification_id: 製品・仕様
         unit_price: 単価
         quanity: 数量
         amount: 合計
