@@ -10,7 +10,7 @@ ja:
       client:
         name: 名前
         postal_code: 郵便番号
-        prefectures: 都道府県
+        prefectures_id: 都道府県
         city: 市区町村
         address: 番地
         phone_number: 電話番号
