@@ -1,3 +1,10 @@
+.sign-up{
+  background-color: beige;
+  display: flex;
+  justify-content: center;
+  height: 100px;
+}
+
 .sign{
   background-color: beige;
   display: flex;
@@ -6,14 +13,16 @@
   flex-direction: column;
   height:100vh;
   width: 100%;
+  overflow: scroll;
 }
+
 
 
 .sign-name{
   font-size: 30px;
   color: brown;
   border-bottom: 3px solid cadetblue;
-  margin-bottom: 50px;
+  margin-top: 50px;
 }
 .sign-errors{
   margin-left: 100px;
