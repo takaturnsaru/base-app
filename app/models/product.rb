@@ -6,7 +6,7 @@ class Product < ApplicationRecord
 
   with_options presence: true do
     validates :name
-    validates :grade_id, numericality: {other_then: 0, message:"Grade Select"}
+    validates :grade_id, numericality: {other_thあn: 0, message:"を選択してください"}
     validates :price
   end
     
