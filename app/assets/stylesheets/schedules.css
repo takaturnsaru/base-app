@@ -87,6 +87,7 @@ li{
 }
 
 .calendar-field{
+  
   margin: 20px;
 }
 
@@ -103,7 +104,7 @@ li{
 }
 
 .calendar-name-field{
-  font-size: 20pxpx;
+  font-size: 20px;
   width: 300px;
 }
 
