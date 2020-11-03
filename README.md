@@ -2,6 +2,16 @@
 # アプリ名
 営業ツール取りまとめアプリ
 
+## 本番環境
+
+https://base-app-29236.herokuapp.com/
+Basic認証ID：saru
+Basic認証PASS：1234
+
+- ログイン情報(テスト用)
+メールアドレス：hogehoge@mail.com
+パスワード：q12wq12wq
+
 ## 制作背景
 
 このアプリケーションは、営業職の方をターゲットにして制作しました。
